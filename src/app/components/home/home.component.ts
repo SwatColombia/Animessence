@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Carousel, initTWE } from "tw-elements";
+initTWE({ Carousel });
+
 
 @Component({
   selector: 'app-home',

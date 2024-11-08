@@ -8,6 +8,7 @@ import { SharedModule } from './modules/shared/shared.module';
 import { ComponentsModule } from './components/components.module';
 import { AuthRoutingModule } from './modules/auth/auth-routing.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 import { ArtistsService } from './services/artists.service';
 
 
