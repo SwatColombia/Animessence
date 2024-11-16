@@ -6,8 +6,14 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap");
 @tailwind base;
 body {
-    background: -webkit-linear-gradient(90deg, #9c12b8bb, #558bd1);
-    background: linear-gradient(90deg, #9b0b8898, #558bd1);
+    //background: -webkit-linear-gradient(90deg, #9c12b8bb, #558bd1);
+    //background: linear-gradient(90deg, #9b0b8898, #558bd1);
+    background-image: url(../src/assets/background_albedo.png);
+    background-size: cover;
+    /* Para que cubra todo el espacio del elemento */
+    background-position: center;
+    /* Para centrar la imagen */
+    background-repeat: no-repeat;
 }
 
 @layer base {
@@ -25,14 +31,17 @@ body {
 @tailwind utilities;
 p {
     @apply leading-[1.6];
-
-
-}
-a, input, label , h2, h1, p {
-  font-family: "Orbitron", serif;
-  font-optical-sizing: auto;
-  font-weight: weight;
-  font-style: normal;
-
 }
 
+a,
+input,
+label,
+h2,
+h1,
+button,
+p {
+    font-family: "Orbitron", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
