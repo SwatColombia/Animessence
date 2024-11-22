@@ -10,6 +10,8 @@ const app = express();
 
 app.get('/', usuarioRoutes)
 
+app.post('/', usuarioRoutes)
+
 
 
 //const bodyParser = require('body-parser');
