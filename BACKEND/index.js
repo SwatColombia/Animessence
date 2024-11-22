@@ -1,23 +1,35 @@
-const express = require('express');
+import express from 'express';
+import usuarioRoutes from './routes/usuarioRoutes.js'
+
+
+//import connectDB from './database/db.js';
+
+
 const app = express();
-const port = 4000;
-const connectDB = require('./database/db');
-const bodyParser = require('body-parser');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
-const mongoose = require('mongoose');
 
-mongoose.connect('connectDB', {
+app.get('/', usuarioRoutes)
+
+
+
+//const bodyParser = require('body-parser');
+//const mongoose = require('mongoose');
+
+
+//app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({ extended: true }));
+
+
+/* mongoose.connect('connectDB', {
 
 }).then(() =>
     console.log('Conectado a MongoDB')).
 catch(err => console.error('Error al conectarse a MongoDB:', err));
+ */
+//connectDB();
+// routing 
 
-connectDB();
-
-app.get('/', (req, res) => { res.send('¡Hola, mundo!'); });
-
+const port = 4000;
 app.listen(port, () => {
     console.log(`Servidor escuchando en http://localhost:${port}`
 

@@ -1,12 +1,18 @@
-import express, { request } from "express";
+import express from "express";
 
 const router = express.Router();
 
-router.get('/login', (req, res) => {
-    res.render('auth/login', {
-        autenticado: true,
-    })
-})
+router.get('/', (req, res) => {
+    res.send('¡Hola, mundo!');
+});
 
 
-export default router;
+router.post('/', (req, res) => {
+    res.json({ msg: 'Respuesta de el servidor' });
+});
+
+router.route('/')
+    .get
+
+
+export default router
