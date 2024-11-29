@@ -1,20 +1,19 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-require('dotenv').config({ path: 'variables.env' });
-
-const connectDB = async(
-
-) => {
+const conectarDB = async () => {
     try {
-        await mongoose.connect(process.env.DB_MONGO, {
+        const db = await mongoose.connect('mongodb+srv://andresbetancur661:1234@cluster0.hsojtnt.mongodb.net/animessence', {
 
-            //useNewUrlParser: true,
-            //useUnifiedTopology: true,
-            //useFindAndModify: false
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
 
         })
 
+
+        const url = `${db.connection.host}:${db.connection.port}`;
         console.log('Base de datos conectada');
+        console.log(`Mongo conectado en: ${url}`)
+
 
     } catch (error) {
         console.log(error);
@@ -25,4 +24,4 @@ const connectDB = async(
 
 }
 
-module.exports = connectDB;
+export default conectarDB;
