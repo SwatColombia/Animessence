@@ -12,8 +12,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ArtistsService } from './services/artists.service';
 
 
+
 @NgModule({
-  declarations: [AppComponent ],
+  declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule, AuthModule,AuthRoutingModule, ComponentsModule,HttpClientModule, SharedModule],
   providers: [HttpClient],
 
