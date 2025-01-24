@@ -15,7 +15,7 @@ export default class LoginComponent {
   error: string = 'Error en la aplicacion';
 
   constructor(
-    /* private readonly loginService: LoginService, */
+    private readonly loginService: LoginService, 
     private readonly fb: FormBuilder,
     private readonly router: Router,
   ) {

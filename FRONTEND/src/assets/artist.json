@@ -1,0 +1,58 @@
+
+ [
+    {
+      "id": "1",
+      "name": "Modelado 3D Blender",
+      "description": "El modelado 3D con Blender se refiere al proceso de creación de objetos tridimensionales utilizando Blender, un software de diseño y animación 3D gratuito y de código abierto. Este enfoque permite a los artistas y diseñadores digitales construir modelos detallados y realistas, que pueden usarse en animaciones, videojuegos, efectos visuales, impresión 3D, entre otros.",
+      "price": "$30000",
+      "image": "https://cdna.artstation.com/p/assets/images/images/004/747/436/large/hector-moran-hec-infinidude-01.jpg?1485966761",
+      "user": "CESAR RAMOS-PERU",
+      "user_img": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+    },
+    {
+      "id": "2",
+      "name": "KitBash 3D Medieval",
+      "description": "El término \"KitBash 3D Oeste\" hace referencia a un conjunto de modelos 3D diseñados específicamente con temática oeste, ideales para crear escenas o entornos de forma rápida y eficiente. Estos kits suelen incluir elementos arquitectónicos como castillos, torres, puentes, casas medievales, y accesorios como armas, carretas, antorchas y más.",
+      "price": "$40000",
+      "image": "https://cdna.artstation.com/p/assets/images/images/039/741/506/large/kitbash3d-kb3d-favelas-00-2k.jpg?1626799812",
+      "user": "JORGE ANDRES PEREZ-ECUADOR",
+      "user_img": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+    },
+    {
+      "id": "3",
+      "name": "KitBash 3D Oeste",
+      "description": "El término \"KitBash 3D Medieval\" hace referencia a un conjunto de modelos 3D diseñados específicamente con temática medieval, ideales para crear escenas o entornos de forma rápida y eficiente. Estos kits suelen incluir elementos arquitectónicos como castillos, torres, puentes, casas medievales, y accesorios como armas, carretas, antorchas y más.",
+      "price": "$45000",
+      "image": "https://cdna.artstation.com/p/assets/images/images/050/596/766/large/kitbash3d-outlaw-web-set-gallery-02.jpg?1655224442",
+      "user": "ANDREA LIZETH MEJIA-COLOMBIA",
+      "user_img": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+    },
+    {
+      "id": "4",
+      "name": "KitBash 3D Cyberpunk",
+      "description": "El término \"KitBash 3D Cyberpunk\" hace referencia a un conjunto de modelos 3D diseñados específicamente con temática cyberpunk, ideales para crear escenas o entornos de forma rápida y eficiente. Estos kits suelen incluir elementos arquitectónicos futuristas, vehículos voladores, robots, armas avanzadas, y accesorios tecnológicos.",
+      "price": "$50000",
+      "image": "https://cdna.artstation.com/p/assets/images/images/050/596/766/large/kitbash3d-outlaw-web-set-gallery-02.jpg?1655224442",
+      "user": "CARLOS PEREZ-MEXICO",
+      "user_img": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+    },
+    {
+      "id": "5",
+      "name": "KitBash 3D Cyberpunk",
+      "description": "El término \"KitBash 3D Cyberpunk\" hace referencia a un conjunto de modelos 3D diseñados específicamente con temática cyberpunk, ideales para crear escenas o entornos de forma rápida y eficiente. Estos kits suelen incluir elementos arquitectónicos futuristas, vehículos voladores, robots, armas avanzadas, y accesorios tecnológicos.",
+      "price": "$50000",
+      "image": "https://cdna.artstation.com/p/assets/images/images/050/596/766/large/kitbash3d-outlaw-web-set-gallery-02.jpg?1655224442",
+      "user": "ALFONSINA GARCIA-ARGENTINA",
+      "user_img": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+    },
+    {
+      "id": "6",
+      "name": "KitBash 3D Cyberpunk",
+      "description": "El término \"KitBash 3D Cyberpunk\" hace referencia a un conjunto de modelos 3D diseñados específicamente con temática cyberpunk, ideales para crear escenas o entornos de forma rápida y eficiente. Estos kits suelen incluir elementos arquitectónicos futuristas, vehículos voladores, robots, armas avanzadas, y accesorios tecnológicos.",
+      "price": "$50000",
+      "image": "https://cdna.artstation.com/p/assets/images/images/050/596/766/large/kitbash3d-outlaw-web-set-gallery-02.jpg?1655224442",
+      "user": "JHON FREDDY GOMEZ-VENEZUELA",
+      "user_img": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+    }
+  ]
+

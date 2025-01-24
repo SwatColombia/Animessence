@@ -9,6 +9,7 @@ import { RegisterComponent } from './modules/auth/pages/register/register.compon
 import { WorksComponent } from './components/works/works.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { UploadComponent } from './components/upload/upload.component';
+import { DetailsComponent } from './details/details.component';
 
 const routes: Routes = [
 
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent },
   { path: 'artistas', component: ArtistsComponent },
+  { path: 'details/:id', component: DetailsComponent},
   { path: 'carrito', component: CarritoComponent },
   { path: 'upload', component:UploadComponent},
   { path: 'works',component: WorksComponent},

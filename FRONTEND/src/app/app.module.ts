@@ -10,11 +10,12 @@ import { AuthRoutingModule } from './modules/auth/auth-routing.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { ArtistsService } from './services/artists.service';
+import { DetailsComponent } from './details/details.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, DetailsComponent],
   imports: [BrowserModule, AppRoutingModule, AuthModule,AuthRoutingModule, ComponentsModule,HttpClientModule, SharedModule],
   providers: [HttpClient],
 
