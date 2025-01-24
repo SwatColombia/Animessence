@@ -9,19 +9,22 @@ import { catchError } from 'rxjs/operators';
 })
 export class ArtistsService {
 
-  private jsonUrl = 'assets/artists.json';
+  
+
+  private jsonUrl = 'assets/artist.json';
 
   constructor(private http: HttpClient,
               private httpClient: HttpClientModule
   ) { }
 
   getArtists(): Observable<any[]> {
+   
     return this.http.get<any[]>(this.jsonUrl);
   }
 
   // Método para obtener un artista por su ID
-  getArtistById(id: number): Observable<any> {
-    console.log(this.getArtists);
+  getArtistById(id: string): Observable<any> {
+    console.log('ID: ', id);
     return this.http.get<any[]>(this.jsonUrl).pipe(
       map((artists) => artists.find((artist) => artist.id === id))
       

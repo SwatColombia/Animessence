@@ -9,15 +9,20 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class ArtistsComponent  {
 
+  artists: any[] = [];
+
   constructor(private artistsService: ArtistsService,
               private httpClient: HttpClientModule
-) { }
-
-  getArtists() {
+  ) { }
+  
+  ngOnInit(): void {
     this.artistsService.getArtists().subscribe((artists) => {
-      console.log(artists);
+      this.artists = artists;
+      console.log('Artists: ', this.artists);
+      
     });
   }
+  
   
 }
 
