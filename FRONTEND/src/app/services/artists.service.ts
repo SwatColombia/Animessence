@@ -29,7 +29,11 @@ export class ArtistsService {
       map((artists) => artists.find((artist) => artist.id === id))
       
 
+      
+      
+
     );
+    console.log('Artists: ', this.getArtistById);
   }
   
   

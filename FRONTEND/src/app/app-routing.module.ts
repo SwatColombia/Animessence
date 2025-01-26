@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent },
   { path: 'artistas', component: ArtistsComponent },
-  { path: 'details/:id', component: DetailsComponent},
+  { path: 'artistas/details/:id', component: DetailsComponent},
   { path: 'carrito', component: CarritoComponent },
   { path: 'upload', component:UploadComponent},
   { path: 'works',component: WorksComponent},
