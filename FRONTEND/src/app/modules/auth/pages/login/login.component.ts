@@ -6,6 +6,7 @@ import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
+  standalone: false,
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
