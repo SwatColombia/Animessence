@@ -11,12 +11,20 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { ArtistsService } from './services/artists.service';
 import { DetailsComponent } from './details/details.component';
-
-
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent, DetailsComponent],
-  imports: [BrowserModule, AppRoutingModule, AuthModule,AuthRoutingModule, ComponentsModule,HttpClientModule, SharedModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    AuthModule,
+    AuthRoutingModule,
+    ComponentsModule,
+    HttpClientModule,
+    SharedModule,
+    RouterModule,
+  ],
   providers: [HttpClient],
 
   bootstrap: [AppComponent],
