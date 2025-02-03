@@ -16,13 +16,13 @@ export default class LoginComponent {
   error: string = 'Error en la aplicacion';
 
   constructor(
-    private readonly loginService: LoginService, 
+    private readonly loginService: LoginService,
     private readonly fb: FormBuilder,
-    private readonly router: Router,
+    private readonly router: Router
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, emailValidator]],
-      password: ['', [Validators.required, Validators.minLength(7)]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
   get email() {

@@ -10,44 +10,43 @@
           class="text-center justify-center text-white font-bold text-5xl mb-6 ">
         Registrate
         </h1>
-        <form
+        <form [formGroup]="registerForm" autocomplete="off"
           class="md:w-6/12 lg:w-10/12 flex-wrap items-center flex-justify-center pl-16">
           <!-- Email input -->
           <div class="relative mb-6" data-twe-input-wrapper-init>
             <h2 class="md:w-2/8 text-white font-semibold text-xl pb-2">
               Nombre y apellidos
             </h2>
-            <input type="email"
+            <input type="text"
               class="peer block min-h-[auto] sm:w-24 md:w-48 lg:w-full rounded border-10 bg-white px-3 py-[4px] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-100"
-              id="email" formControlName="email" name="required"
+              id="nombre" formControlName="nombre" 
               placeholder="Registra tu nombre completo" />
-            <span class="form-text text-red-600" *ngIf="
-                registerForm.controls['email'].getError('required') &&
-                registerForm.controls['email'].touched
-              " class="form-text">El email es obligatorio.
+            <span *ngIf="
+                registerForm.controls['nombre'].hasError('minlength') &&
+                registerForm.controls['nombre'].touched
+              " class="form-text">Tu nombre debe tener al menos {{ registerForm.controls['nombre'].getError('minlength')?.requiredLength }} caracteres.
             </span>
             <span *ngIf="
-                registerForm.controls['email'].getError('email') &&
-                registerForm.controls['email'].touched
-              " class="form-text">Ingresa correo electronico valido
-            </span>
+                registerForm.controls['nombre'].hasError('required') &&
+                registerForm.controls['nombre'].touched
+              " class="form-text">Tu nombre completo es obligatorio.</span>
           </div><div class="relative mb-6" data-twe-input-wrapper-init>
             <h2 class="md:w-2/5 text-white font-semibold text-xl pb-2">
               Usuario
             </h2>
             <input type="text"
               class="peer block min-h-[auto] sm:w-24 md:w-48 lg:w-full rounded border-10 bg-white px-3 py-[4px] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-100"
-              id="usuario" formControlName="email" name="required"
+              id="usuario" formControlName="usuario" 
               placeholder="Crea tu usuario" />
             <span class="form-text text-red-600" *ngIf="
-                registerForm.controls['email'].getError('required') &&
-                registerForm.controls['email'].touched
-              " class="form-text">El email es obligatorio.
+                registerForm.controls['usuario'].getError('required') &&
+                registerForm.controls['usuario'].touched
+              " class="form-text">El usuario es obligatorio.
             </span>
             <span *ngIf="
-                registerForm.controls['email'].getError('email') &&
-                registerForm.controls['email'].touched
-              " class="form-text">Ingresa correo electronico valido
+                registerForm.controls['usuario'].getError('minlength') &&
+                registerForm.controls['usuario'].touched
+              " class="form-text">Tu nombre debe tener al menos {{ registerForm.controls['usuario'].getError('minlength')?.requiredLength }} caracteres.
             </span>
           </div><div class="relative mb-6" data-twe-input-wrapper-init>
             <h2 class="md:w-2/5 text-white font-semibold text-xl pb-2">
@@ -55,7 +54,7 @@
             </h2>
             <input type="email"
               class="peer block min-h-[auto] sm:w-24 md:w-48 lg:w-full rounded border-10 bg-white px-3 py-[4px] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-100"
-              id="email" formControlName="email" name="required"
+              id="email" formControlName="email" 
               placeholder="Correo electronico" />
             <span class="form-text text-red-600" *ngIf="
                 registerForm.controls['email'].getError('required') &&
@@ -74,17 +73,16 @@
             </h2>
             <input type="password"
               class="peer block min-h-[auto] sm:w-24 md:w-48 lg:w-full rounded border-10 bg-white px-3 py-[4px] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-100"
-              id="password" formControlName="password" name="required"
+              id="password" formControlName="password" 
               placeholder="Crea tu contraseña" />
             <span *ngIf="
-               registerForm.controls['password'].getError('minLength(8)') &&
-               registerForm.controls['password'].touched
-              " class="form-text">La contraseña debe tener al menos 8
-              caracteres.
+                registerForm.controls['password'].hasError('minlength') &&
+                registerForm.controls['password'].touched
+              " class="form-text">La contraseña debe tener al menos {{ registerForm.controls['password'].getError('minlength')?.requiredLength }} caracteres.
             </span>
             <span *ngIf="
-               registerForm.controls['password'].getError('required') &&
-               registerForm.controls['password'].touched
+                registerForm.controls['password'].hasError('required') &&
+                registerForm.controls['password'].touched
               " class="form-text">La contraseña es obligatoria.</span>
           </div>
           <div class="relative mb-6" data-twe-input-wrapper-init>
@@ -93,17 +91,17 @@
             </h2>
             <input type="text"
               class="peer block min-h-[auto] sm:w-24 md:w-48 lg:w-full rounded border-10 bg-white px-3 py-[4px] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-100"
-              id="nacionalidad" formControlName="email" name="required"
+              id="nacionalidad" formControlName="nacionalidad" 
               placeholder="Ingresa tu nacionalidad" />
             <span class="form-text text-red-600" *ngIf="
-                registerForm.controls['email'].getError('required') &&
-                registerForm.controls['email'].touched
-              " class="form-text">El email es obligatorio.
+                registerForm.controls['nacionalidad'].getError('required') &&
+                registerForm.controls['nacionalidad'].touched
+              " class="form-text">Tu Nacionalidad es obligatorio.
             </span>
             <span *ngIf="
-                registerForm.controls['email'].getError('email') &&
-                registerForm.controls['email'].touched
-              " class="form-text">Ingresa correo electronico valido
+                registerForm.controls['nacionalidad'].getError('minlength') &&
+                registerForm.controls['nacionalidad'].touched
+              " class="form-text">Tu nombre debe tener al menos {{ registerForm.controls['nacionalidad'].getError('minlength')?.requiredLength }} caracteres.
             </span>
           </div><div class="relative mb-6 pb-6" data-twe-input-wrapper-init>
             <h2 class="md:w-2/8 text-white font-semibold text-xl pb-2">
@@ -111,17 +109,17 @@
             </h2>
             <input type="text"
               class="peer block min-h-[auto] sm:w-24 md:w-48 lg:w-full rounded border-10 bg-white px-3 py-[4px] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-100"
-              id="portafolio" formControlName="email" name="required"
+              id="portafolio" formControlName="portafolio" 
               placeholder="Muestra tu arte digital" />
             <span class="form-text text-red-600" *ngIf="
-                registerForm.controls['email'].getError('required') &&
-                registerForm.controls['email'].touched
-              " class="form-text">El email es obligatorio.
+                registerForm.controls['portafolio'].getError('required') &&
+                registerForm.controls['portafolio'].touched
+              " class="form-text">Muestranos tu  portafolio es obligatorio.
             </span>
             <span *ngIf="
-                registerForm.controls['email'].getError('email') &&
-                registerForm.controls['email'].touched
-              " class="form-text">Ingresa correo electronico valido
+                registerForm.controls['portafolio'].getError('minlength') &&
+                registerForm.controls['portafolio'].touched
+              " class="form-text">Tu portafolio debe tener al menos {{ registerForm.controls['portafolio'].getError('minlength')?.requiredLength }} caracteres.
             </span>
           </div>
 
@@ -129,26 +127,15 @@
           
           
           <div class="flex justify-center">
-            <button type="submit"
+            <button 
+            type="submit"
               class="w-56 bg-purple-500 hover:bg-yellow-400 text-white font-bold  hover:text-black py-2 rounded-full mb-6">
               REGISTRARME
             </button>
           </div>
           <!-- Remember me checkbox -->
           <div class="mb-9 pt-6 items-justify-center">
-            <div class="mb-[0.125rem] block max-h-[1.5rem]">
-              <div class="w-full content-center">
-                <input type="checkbox" id="rememberMe"
-                  class="peer h-4 w-4 text-primary-400 border-gray-300 rounded focus:ring-primary-400"
-                  formControlName="rememberMe" />
-                <label for="rememberMe"
-                  class="text-white text-sm font-light focus:outline-none dark:text-primary-400">
-                  Acepto los
-                  <a routerLink="../terms"
-                    class="text-white-600 font-extrabold focus:outline-none hover:text-gray-600 dark:text-primary-400">Términos
-                    y condiciones</a>
-                </label>
-                <div>
+           
                 <p
                 class="w-full font-light text-white text-lg items-justify-between focus:outline-none dark:text-primary-400">
                 ¿Ya tengo cuenta?
@@ -157,9 +144,7 @@
                   </a>
                 </p>
                 </div>
-            </div>
-           </div>
-          </div>
+            
         </form>
       </div>
       <div
