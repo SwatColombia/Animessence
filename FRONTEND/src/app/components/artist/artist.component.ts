@@ -23,7 +23,9 @@ export class ArtistsComponent {
     this.artistsService.getArtists().subscribe((artists) => {
       this.artists = artists;
       console.log('Artists: ', this.artists);
+
     });
+    
   }
   
 }

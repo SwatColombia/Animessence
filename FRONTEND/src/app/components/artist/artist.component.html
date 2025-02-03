@@ -20,8 +20,8 @@
           <p class="mt-1 text-white text-xl">{{ artist.price }} cop</p>
           <div>
             <button type="submit"
-              class="w-40 bg-purple-500 shadow-lg shadow-indigo-500/50 hover:bg-yellow-400 hover:text-black text-white font-bold  hover:text-black py-2 rounded-full mb-6 text-sm " routerLink="['/artist', artist.id]">
-              Ver mas..
+              class="w-40 bg-purple-500 shadow-lg shadow-indigo-500/50 hover:bg-yellow-400 hover:text-black text-white font-bold  hover:text-black py-2 rounded-full mb-6 text-sm " [routerLink]="['/details', artist.id]">
+              Ver detalles..
             </button>
 
           </div>

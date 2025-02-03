@@ -3,39 +3,22 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ArtistsService {
-
-  
-
   private jsonUrl = 'assets/artist.json';
 
-  constructor(private http: HttpClient,
-              private httpClient: HttpClientModule
-  ) { }
+  constructor(private http: HttpClient, private httpClient: HttpClientModule) {}
 
   getArtists(): Observable<any[]> {
-   
     return this.http.get<any[]>(this.jsonUrl);
   }
 
   // Método para obtener un artista por su ID
   getArtistById(id: string): Observable<any> {
-    console.log('ID: ', id);
-    return this.http.get<any[]>(this.jsonUrl).pipe(
-      map((artists) => artists.find((artist) => artist.id === id))
-      
-
-      
-      
-
-    );
-    console.log('Artists: ', this.getArtistById);
+    return this.http
+      .get<any[]>(this.jsonUrl)
+      .pipe(map((artists) => artists.find((artist) => artist.id === id)));
   }
-  
-  
-  }
-
+}
