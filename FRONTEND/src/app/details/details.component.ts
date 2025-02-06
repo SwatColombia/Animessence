@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { ArtistsService } from '../services/artists.service';
+import { CarritoService } from '../services/carrito.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, map } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-details',
@@ -18,7 +21,9 @@ export class DetailsComponent {
   constructor(
     private artist: ArtistsService,
     private http: HttpClient,
-    private router: ActivatedRoute
+    private cartService: CarritoService,
+    private router: ActivatedRoute,
+     private toastr : ToastrService
   ) {
     //obetenemos el params
     this.router.params.subscribe((params) => {
@@ -31,7 +36,15 @@ export class DetailsComponent {
     this.artist.getArtistById(id).subscribe((artists) => {
       console.log(artists);
       this.artists = artists;
-      console.log(typeof artists, artists);
+      
     });
+   
+  }
+  agregarAlCarrito(artist: any) {
+    this.cartService.addToCart(artist);
+    this.toastr.success('Producto Agregado al Carrito', artist.name);
+    price: Number(artist.price),
+
+    console.log('Producto Agregado :' , artist.name);
   }
 }
