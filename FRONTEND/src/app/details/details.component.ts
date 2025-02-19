@@ -43,8 +43,16 @@ export class DetailsComponent {
   agregarAlCarrito(artist: any) {
     this.cartService.addToCart(artist);
     this.toastr.success('Producto Agregado al Carrito', artist.name);
+    this.guardarCarritoEnLocalStorage();
     price: Number(artist.price),
 
     console.log('Producto Agregado :' , artist.name);
   }
+  guardarCarritoEnLocalStorage() {
+    // Obtén el carrito actual desde el servicio
+    const carrito = this.cartService.getCart();
+
+    // Guarda el carrito en localStorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
 }
