@@ -10,7 +10,7 @@
           class="text-center justify-center text-white font-bold text-5xl mb-12">
           Inicia sesión
         </h1>
-        <form  [formGroup]="loginForm" autocomplete="off" 
+        <form (ngSubmit)="login()"  [formGroup]="loginForm" autocomplete="off" 
           class="md:w-6/12 lg:w-10/12 flex-wrap items-center flex-justify-center pl-20" >
           <!-- Email input -->
           <div class="relative mb-6" data-twe-input-wrapper-init>

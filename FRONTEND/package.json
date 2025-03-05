@@ -20,6 +20,7 @@
     "@angular/router": "^16.0.0",
     "anim-essence": "file:",
     "bootstrap": "^5.3.3",
+    "cors": "^2.8.5",
     "font-awesome": "^4.7.0",
     "ngx-toastr": "^19.0.0",
     "rxjs": "~7.8.0",

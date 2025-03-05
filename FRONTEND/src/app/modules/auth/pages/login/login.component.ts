@@ -11,6 +11,10 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./login.component.scss'],
 })
 export default class LoginComponent {
+  email: string = '';
+  password: string = '';
+
+
   loginForm: FormGroup;
   showPassword: boolean = false;
   error: string = 'Error en la aplicacion';
@@ -25,18 +29,23 @@ export default class LoginComponent {
       password: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
-  get email() {
+  /* get email() {
     return this.loginForm.get('email');
   }
   get password() {
     return this.loginForm.get('password');
-  }
-
-  /* login() {
-    //temporalmente para q el formulario fue tocado
-    if (this.loginForm.invalid) {
-      return this.loginForm.markAllAsTouched();
-    }
-    this.loginService.Login(this.loginForm.value).subscribe();
   } */
+
+   login() {
+    this.loginService.login(this.email, this.password).subscribe(response =>{
+      if(response.success){
+        console.log('usuario logeado');
+        //localStorage.setItem('token', response.token);
+        this.router.navigate(['/inicio']);
+      }
+      else {
+        this.error = response.message;
+      }
+    })
+}
 }

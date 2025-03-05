@@ -9,7 +9,7 @@ import { WorksComponent } from './components/works/works.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { UploadComponent } from './components/upload/upload.component';
 import { DetailsComponent } from './details/details.component';
-import { AuthGuard } from './guards/auth.guard';
+//import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'artistas', component: ArtistsComponent },
   { path: 'details/:id', component: DetailsComponent },
-  { path: 'carrito', component: CarritoComponent, canActivate:[AuthGuard] },
+  { path: 'carrito', component: CarritoComponent, /* canActivate:[AuthGuard] */ },
   { path: 'upload', component: UploadComponent },
   { path: 'works', component: WorksComponent },
   { path: '**', redirectTo: '/home', pathMatch: 'full' },
