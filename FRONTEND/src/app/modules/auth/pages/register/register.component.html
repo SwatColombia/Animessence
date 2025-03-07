@@ -10,7 +10,7 @@
           class="text-center justify-center text-white font-bold text-5xl mb-6 ">
         Registrate
         </h1>
-        <form [formGroup]="registerForm" autocomplete="off"
+        <form (ngSubmit)="register()" [formGroup]="registerForm" autocomplete="off"
           class="md:w-6/12 lg:w-10/12 flex-wrap items-center flex-justify-center pl-16">
           <!-- Email input -->
           <div class="relative mb-6" data-twe-input-wrapper-init>
@@ -64,7 +64,7 @@
             <span *ngIf="
                 registerForm.controls['email'].getError('email') &&
                 registerForm.controls['email'].touched
-              " class="form-text">Ingresa correo electronico valido
+              " class="form-text">Ingresa correo electrónico valido
             </span>
           </div>
           <div class="relative mb-6" data-twe-input-wrapper-init>
@@ -114,7 +114,7 @@
             <span class="form-text text-red-600" *ngIf="
                 registerForm.controls['portafolio'].getError('required') &&
                 registerForm.controls['portafolio'].touched
-              " class="form-text">Muestranos tu  portafolio es obligatorio.
+              " class="form-text">Muestranos tu portafolio es obligatorio.
             </span>
             <span *ngIf="
                 registerForm.controls['portafolio'].getError('minlength') &&

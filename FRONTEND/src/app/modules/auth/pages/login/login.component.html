@@ -20,7 +20,7 @@
             <input type="email"
               class="peer block min-h-[auto] sm:w-24 md:w-48 lg:w-full rounded border-10 bg-white px-3 py-[4px] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-100"
               id="email" formControlName="email" name="required"
-              placeholder="Correo electronico" />
+              placeholder="Correo electrónico" />
             <span class="form-text text-red-600" *ngIf="
                 loginForm.controls['email'].getError('required') &&
                 loginForm.controls['email'].touched
@@ -29,7 +29,7 @@
             <span *ngIf="
                 loginForm.controls['email'].getError('email') &&
                 loginForm.controls['email'].touched
-              " class="form-text">Ingresa correo electronico valido
+              " class="form-text">Ingresa correo electrónico valido
             </span>
           </div>
 
@@ -52,9 +52,9 @@
                 loginForm.controls['password'].touched
               " class="form-text">La contraseña es obligatoria.</span>
             <p class="text-end text-white font-light text-sm">
-              Olvidaste tu contraseña?
+              ¿Olvidaste tu contraseña?
               <a href="#" class="font-bold text-white-600 hover:text-gray-600">
-                Recuperala aqui
+                Recupérala aquí.
               </a>
             </p>
           </div>
@@ -69,10 +69,10 @@
             <div class="mb-[0.125rem] block max-h-[1.5rem]">
               <p
                 class="w-full font-light text-white text-lg items-justify-between focus:outline-none dark:text-primary-400">
-                ¿Aun no tienes una cuenta?
+                ¿Aún no tienes una cuenta?
                 <a routerLink="../register" id="register"
-                  class="text-white-600 font-extrabold focus:outline-none hover:text-gray-600 dark:text-primary-400">Registrarte
-                  aqui.
+                  class="text-white-600 font-extrabold focus:outline-none hover:text-gray-600 dark:text-primary-400">Regístrarte
+                  aquí.
                 </a>
               </p>
             </div>

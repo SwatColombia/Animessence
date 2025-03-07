@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpClientModule} from '@angular/common/http';
-import { Observable, BehaviorSubject, tap } from 'rxjs';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { Observable, BehaviorSubject} from 'rxjs';
 import { Router } from '@angular/router';
+import { Login } from '../core/models/login.model';
 
 
 /*import { environment } from 'src/environments/environment';
@@ -23,31 +24,23 @@ export class LoginService {
 
   constructor(
     private http: HttpClient,
-    private client: HttpClientModule,
+   
     private router: Router,
     /*private tokenService: TokenService,*/
   ) {
     this.updateVariables();
   }
-  login(email :string, password: string): Observable<{ success: boolean, message: string, token?: string }> {
-    return this.http.post<{success : boolean , message : string , token? :string }>(this.apiUrl, { email, password }).pipe(
-      tap((res) => {
-        this.isLoggedIn.next(true);
-        //this.id = res.id;
-        //this.token = res.token;
-        //this.role = res.role;
-        //sessionStorage.setItem('token', res.token);
-        //sessionStorage.setItem('id', res.id.toString());
-        //sessionStorage.setItem('role', res.role);
-        this.router.navigate(['/inicio']);
-      })
-    );
-  }
-
+  
+  Login(login: Login): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return this.http.post(`${this.apiUrl}`, login, );
+  } 
   logout() {
     this.isLoggedIn.next(false);
     // this.tokenService.clearToken();
-    this.router.navigate(['/auth/login']);
+    this.router.navigate(['/login']);
     //console.log(this.Login);
   }
 

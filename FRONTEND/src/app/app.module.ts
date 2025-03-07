@@ -10,7 +10,7 @@ import { AuthModule } from './modules/auth/auth.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { ComponentsModule } from './components/components.module';
 import { AuthRoutingModule } from './modules/auth/auth-routing.module';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule} from '@angular/common/http';
 
 import { ArtistsService } from './services/artists.service';
 import { DetailsComponent } from './details/details.component';
@@ -30,6 +30,7 @@ import { RouterModule } from '@angular/router';
     AuthRoutingModule,
     ComponentsModule,
     HttpClientModule,
+    
     SharedModule,
     RouterModule,
   ],
