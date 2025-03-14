@@ -1,43 +1,28 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import cors from 'cors';
 import dotenv from 'dotenv';
-import usuarioRoutes from './routes/usuarioRoutes.js'
+import animadorRoutes from './routes/animadorRoutes.js';
 import conectarDB from './database/db.js';
 
 dotenv.config();
 
 conectarDB();
 
-
 const app = express();
+app.use(cors({
+    origin: 'http://localhost:4200',
+    methods: ['GET', 'POST'],
+    credentials: true,
+    allowedHeaders: 'Content-Type, Authorization'
+    
+}));
+app.use(express.json());
 const port = process.env.PORT || 4000;
 
 
+app.use('/api/animadores3D', animadorRoutes)
 
-app.use(express.json());
-
-app.get('/', usuarioRoutes)
-
-app.post('/', usuarioRoutes)
-
-
-
-//const bodyParser = require('body-parser');
-//const mongoose = require('mongoose');
-
-
-//app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({ extended: true }));
-
-
-/* mongoose.connect('connectDB', {
-
-}).then(() =>
-    console.log('Conectado a MongoDB')).
-catch(err => console.error('Error al conectarse a MongoDB:', err));
- */
-//connectDB();
-// routing 
 
 app.listen(port, () => {
     console.log(`Servidor escuchando en http://localhost:${port}`

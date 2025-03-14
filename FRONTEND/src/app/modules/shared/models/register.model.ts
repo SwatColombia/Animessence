@@ -4,5 +4,5 @@ export interface Register {
     email: string;
     password: string;
     nacionalidad: string;
-    portafolio: string;
+    urlPortafolio: string;
   }

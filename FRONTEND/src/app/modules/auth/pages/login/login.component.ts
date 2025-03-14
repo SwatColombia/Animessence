@@ -54,7 +54,8 @@ export default class LoginComponent {
 
     login() {
       this.loginService.Login(this.loginForm.value).subscribe(response => {
-        if (response.success) {
+        if (response.success ) {
+          
           this.toastr.success('Usuario logeado. Te estamos redirigiendo', 'Bienvenido');
           console.log('usuario logeado');
           setTimeout(() => {

@@ -3,7 +3,7 @@ import {
   FormGroup,
   Validators,
   FormBuilder,
-  FormControl,
+  
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -16,16 +16,17 @@ import { RegisterService } from 'src/app/services/register.service';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent {
+  nombre: string = '';
+  usuario:string = '';
+  email: string = '';
+  password: string = '';
+  nacionalidad: string = '';
+  urlPortafolio: string = '';
+  _id: string = '';
+
   registerForm: FormGroup;
 
-  animador = {
-    nombre: '',
-    usuario: '',
-    email: '',
-    password: '',
-    nacionalidad: '',
-    portafolio: '',
-  }
+   
   
   constructor(
     private readonly fb: FormBuilder,
@@ -39,7 +40,7 @@ export class RegisterComponent {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(7)]],
       nacionalidad: ['', [Validators.required, Validators.minLength(3)]],
-      portafolio: ['', [Validators.required, Validators.minLength(6)]],
+      urlPortafolio: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
@@ -53,14 +54,27 @@ export class RegisterComponent {
   }
 
   register() {
-    this.registerService.Register(this.animador).subscribe({
+    const animadorData = this.registerForm.value; // Obtener datos del formulario
+  
+    this.registerService.registar(animadorData).subscribe({
       next: (response) => {
         console.log('Registro exitoso:', response);
-        this.toastr.success('Registro exitoso', 'Éxito');
+  
+        if (response && response._id) { // Verifica si la respuesta contiene _id
+          console.log('ID del usuario registrado:', response._id);
+          localStorage.setItem('userId', response._id); // Guarda el ID en localStorage
+          console.log(localStorage.getItem('userId'));
+        }
+  
+        this.toastr.success('Te estamos redirigiendo', 'Te has registrado correctamente');
+        
+        setTimeout(() => {
+          this.router.navigate(['/login']);
+        }, 5000);
       },
       error: (error) => {
         console.error('Error en el registro:', error);
-        this.toastr.error('Error en el registro', 'Error');
+        this.toastr.error('Formulario incompleto', 'Verifica tus datos');
       }
     });
   }
