@@ -15,6 +15,7 @@ import { ToastrService } from 'ngx-toastr';
 export default class LoginComponent {
   email: string = '';
   password: string = '';
+  id: string = '';
 
 
   loginForm: FormGroup;
@@ -58,6 +59,8 @@ export default class LoginComponent {
           
           this.toastr.success('Usuario logeado. Te estamos redirigiendo', 'Bienvenido');
           console.log('usuario logeado');
+          console.log(response);
+          sessionStorage.setItem('id', response.id);
           setTimeout(() => {
             this.router.navigate(['/home']);
           }, 3000);

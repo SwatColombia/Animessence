@@ -77,26 +77,17 @@ const login = async (req, res) => {
                 return res.status(400).json({ success: false, message: "Contraseña incorrecta" });
             }
 
-            return res.status(200).json({ success: true, message: "Contraseña correcta" });
-
-
-        // Aquí deberías verificar la contraseña, por ejemplo usando bcrypt
-        // const isMatch = await bcrypt.compare(password, animador.password);
-        // if (!isMatch) {
-        //     return res.status(400).json({ msg: 'Contraseña incorrecta' });
-        // }
-
-        res.json({
-            id: animador._id,
-            email: animador.email,
-            password: animador.password // Nota: No es seguro devolver la contraseña en la respuesta
-        });
+            return res.status(200).json({ success: true, 
+                message: "Contraseña correcta",
+                id: animador._id.toString(), 
+                nombre: animador.nombre,
+                email: animador.email,});
+               
     } catch (error) {
         console.log(error);
         return res.status(500).json({ msg: 'Error al iniciar sesión', error: error.message });
     }
 };
-
     
 /* 
     // Obtener todos los usuarios

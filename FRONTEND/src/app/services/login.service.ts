@@ -1,21 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { Observable, BehaviorSubject} from 'rxjs';
+import { Observable, BehaviorSubject, tap} from 'rxjs';
 import { Router } from '@angular/router';
 import { Login } from '../core/models/login.model';
-
-
-/*import { environment } from 'src/environments/environment';
-import { Login } from '../../../core/models/login.model';
-import { Router } from '@angular/router';
-import { TokenService } from 'src/app/core/shared/services/token.service';*/
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
   private apiUrl ='http://localhost:4000/api/animadores3D/login';
 
-  public id?: number;
+  public id?: string
   public token?: string;
   public role?: string;
 
@@ -35,13 +29,39 @@ export class LoginService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
-    return this.http.post(`${this.apiUrl}`, login, );
+    return this.http.post(`${this.apiUrl}`, login, ).pipe(
+      tap((response: any) => {
+        if (response.success) {
+          this.id = response.id;
+          this.token = response.token;
+          this.role = response.role;
+          
+          console.log(this.id);
+          if (this.id) {
+            sessionStorage.setItem('id', this.id);
+          }
+          this.isLoggedIn.next(true);
+          this.router.navigate(['/home']);
+        }
+      }
+    ));
+    
   } 
+
+  checkIsLogged():Observable<boolean> |boolean{
+    if(sessionStorage.getItem('id')){
+      this.isLoggedIn.next(true);
+      console.log(this.id);
+      return true;
+    }
+    return this.isLoggedIn.value;
+  }
+
   logout() {
     this.isLoggedIn.next(false);
-    // this.tokenService.clearToken();
+    
     this.router.navigate(['/login']);
-    //console.log(this.Login);
+    console.log(this.Login);
   }
 
   updateVariables() {
@@ -49,7 +69,7 @@ export class LoginService {
       this.isLoggedIn.next(true);
     }
     if (sessionStorage.getItem('id')) {
-      this.id = Number(sessionStorage.getItem('id'));
+      this.id = sessionStorage.getItem('id') || undefined;
     }
     if (sessionStorage.getItem('role')) {
       this.role = sessionStorage.getItem('role')!;

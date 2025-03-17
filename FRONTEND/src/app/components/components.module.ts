@@ -9,6 +9,7 @@ import { ArtistsService } from '../services/artists.service';
 import { CarritoComponent } from './carrito/carrito.component';
 import { UploadComponent } from './upload/upload.component';
 import { TruncateWordsPipe } from '../pipes/truncate-words.pipe';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   exports: [
@@ -25,6 +26,7 @@ import { TruncateWordsPipe } from '../pipes/truncate-words.pipe';
     CarritoComponent,
     UploadComponent,
     TruncateWordsPipe,
+    ProfileComponent,
   ],
   imports: [CommonModule, RouterModule],
   providers: [ArtistsService],

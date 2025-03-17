@@ -128,20 +128,32 @@
       </div>
 
       <!-- Second dropdown container -->
-      <div class="relative" data-twe-dropdown-ref
-        data-twe-dropdown-alignment="end">
-        <!-- Second dropdown trigger -->
-        <a
-          class="flex items-center whitespace-nowrap transition duration-150 ease-in-out motion-reduce:transition-none"
-          href="/login" id="dropdownMenuButton2" role="button"
-          data-twe-dropdown-toggle-ref aria-expanded="false">
-          <!-- User avatar -->
-          <img src="https://tecdn.b-cdn.net/img/new/avatars/2.jpg"
-            class="rounded-full" style="height: 30px; width: 30px" alt
-            loading="lazy" />
-        </a>
-        <!-- Second dropdown menu -->
+      <div class="relative inline-block text-left">
+        <!-- Botón de avatar -->
+        <button id="dropdownMenuButton2" (click)="toggleMenu()" class="flex items-center">
+          <img
+           
+            src="https://tecdn.b-cdn.net/img/new/avatars/2.jpg" 
+            class="rounded-full cursor-pointer"
+            style="height: 30px; width: 30px"
+            alt="User Avatar"
+            loading="lazy"
+          />
+        </button>
+      
+        <!-- Menú desplegable -->
+        <div *ngIf="menuAbierto" class="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-lg shadow-lg">
+          <a (click)="iniciarSesion()" class="block px-4 py-2 text-sm text-lime-600 hover:bg-gray-100 cursor-pointer">
+            Iniciar sesión
+          </a>
 
+          <a (click)="verPerfil()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">
+            Ver Perfil
+          </a>
+          <a (click)="cerrarSesion()" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 cursor-pointer">
+            Cerrar Sesión
+          </a>
+        </div>
       </div>
     </div>
   </div>
