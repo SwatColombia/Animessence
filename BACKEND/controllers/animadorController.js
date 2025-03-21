@@ -1,27 +1,6 @@
 import Animador from '../models/Animador.js';
 import bcrypt from 'bcrypt';
-    // Importa tu modelo de usuario
-
-// Controlador para gestionar usuarios
-/* const registrar = async (req, res) => {
-    const { nombre, usuario, email, password, nacionalidad, urlPortafolio } = req.body;
     
-    const animadorExistente = await Animador.findOne
-    ({ email });
-    if (animadorExistente) {
-        return res.status(400).json({ msg: 'El usuario ya está registrado' });
-    }
-
-    try {
-        const animador = new Animador(req.body);
-        const animadorGuardado = await animador.save();
-        res.json(animadorGuardado);
-        res.json({ msg: 'Usuario registrado con éxito' });
-    } catch (error) {
-        console.log(error);
-        res.status(400).json({ msg: 'Hubo un error al registrar el usuario', error: error.message });
-            }
-         }; */
          const registrar = async (req, res) => {
             const { nombre, usuario, email, password, nacionalidad, urlPortafolio } = req.body;
         
@@ -52,9 +31,9 @@ import bcrypt from 'bcrypt';
         };
         
 
-const perfil = async (req, res) => {
+const obtenerAnimadores = async (req, res) => {
     try {
-        const animadores3D = await animadores3D.find({usuario: req.usuario.id});
+        const animadores3D = await Animador.find();
         res.status(200).json(animadores3D);
     } catch (error) {
         res.status(500).json({ message: 'Error al obtener los usuarios.', error: error.message });
@@ -88,70 +67,38 @@ const login = async (req, res) => {
         return res.status(500).json({ msg: 'Error al iniciar sesión', error: error.message });
     }
 };
+
+        const eliminarUsuario = async (req, res) => {
+        try {
+            const { id } = req.params;
+            const usuarioEliminado = await Animador.findByIdAndDelete(id);
+
+            if (!usuarioEliminado) {
+                return res.status(404).json({ msg: 'Usuario no encontrado' });
+            }
+
+            res.json({ msg: 'Usuario eliminado correctamente' });
+        } catch (error) {
+            res.status(500).json({ msg: 'Error al eliminar usuario', error: error.message });
+        }
+    };
     
-/* 
-    // Obtener todos los usuarios
-    getAllUsers: async (req, res) => {
-        try {
-            const users = await User.find();
-            res.status(200).json(users);
-        } catch (error) {
-            res.status(500).json({ message: 'Error al obtener los usuarios.', error: error.message });
-        }
-    },
-
-    // Obtener un usuario por ID
-    getUserById: async (req, res) => {
+    const actualizarUsuario = async (req, res) => {
         try {
             const { id } = req.params;
-            const user = await User.findById(id);
-
-            if (!user) {
-                return res.status(404).json({ message: 'Usuario no encontrado.' });
+            const usuarioActualizado = await Animador.findByIdAndUpdate(id, req.body, { new: true });
+    
+            if (!usuarioActualizado) {
+                return res.status(404).json({ msg: 'Usuario no encontrado' });
             }
-
-            res.status(200).json(user);
+    
+            res.json({ msg: 'Usuario actualizado correctamente', usuario: usuarioActualizado });
         } catch (error) {
-            res.status(500).json({ message: 'Error al obtener el usuario.', error: error.message });
+            res.status(500).json({ msg: 'Error al actualizar usuario', error: error.message });
         }
-    },
-
-    // Actualizar un usuario
-    updateUser: async (req, res) => {
-        try {
-            const { id } = req.params;
-            const updates = req.body;
-
-            const updatedUser = await User.findByIdAndUpdate(id, updates, { new: true });
-
-            if (!updatedUser) {
-                return res.status(404).json({ message: 'Usuario no encontrado.' });
-            }
-
-            res.status(200).json({ message: 'Usuario actualizado con éxito.', user: updatedUser });
-        } catch (error) {
-            res.status(500).json({ message: 'Error al actualizar el usuario.', error: error.message });
-        }
-    },
-
-    // Eliminar un usuario
-    deleteUser: async (req, res) => {
-        try {
-            const { id } = req.params;
-
-            const deletedUser = await User.findByIdAndDelete(id);
-
-            if (!deletedUser) {
-                return res.status(404).json({ message: 'Usuario no encontrado.' });
-            }
-
-            res.status(200).json({ message: 'Usuario eliminado con éxito.' });
-        } catch (error) {
-            res.status(500).json({ message: 'Error al eliminar el usuario.', error: error.message });
-        }
-    }, */
+    };
 
 
 export {
-    registrar, perfil, login
+    registrar, obtenerAnimadores, login, eliminarUsuario, actualizarUsuario
 };

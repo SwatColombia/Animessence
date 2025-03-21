@@ -1,15 +1,19 @@
 import express from "express";
 const router = express.Router();
-import { registrar,perfil, login } from "../controllers/AnimadorController.js";
+import { registrar,obtenerAnimadores, login,eliminarUsuario,actualizarUsuario } from '../controllers/animadorController.js';
 
 
 
 router.post('/registrar', registrar) ;
 
-router.get('/perfil', perfil) ;
+router.post('/login', login )
+
+router.get('/usuariosRegistrados', obtenerAnimadores) ;
 
 
-router.post('/login', login ) 
+router.delete('/animadores3D/usuariosRegistrados/:id', eliminarUsuario);
+
+router.put('/animadores3D/usuariosRegistrados/:id', actualizarUsuario);
    
 
 

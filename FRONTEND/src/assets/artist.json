@@ -59,7 +59,37 @@
       "user": "GLORIA PEÑUELA",
       "nationality": "VENEZUELA",
       "user_img": "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-    }
+    },
+    {
+      "id": "7",
+      "name": "Referencias modelado Zombie Medieval",
+      "description": "Recomiendo ampliamente este producto a diseñadores de moda y ropa, artistas de dibujos animados y artistas de anime para que les sirvan de referencia e ideas. ¡Los detalles son de altísima calidad y realistas! Dedico muchas horas a crear mis productos con la más alta calidad y una gran variedad.¡He creado muchos paquetes de referencia! Con estilos y temas diversos y prácticos, además de exclusivos, de excelente calidad y gran variedad. Recomiendo ampliamente visitar mis tiendas para ver otros estilos y diferentes versiones de los productos.",
+      "price": "65000",
+      "image": "https://cdna.artstation.com/p/marketplace/presentation_assets/004/378/714/large/file.jpg?1742242605",
+      "user": "ANDREA LIZETH MEJIA",
+      "nationality": "COLOMBIA",
+      "user_img": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+    },
+    {
+      "id": "8",
+      "name": "Referencias modelado Marvel",
+      "description": "¡Embárquese en un emocionante viaje al mundo del arte!Hoy en día, la integración de la IA en el arte permite a los artistas superar los límites de la creatividad y mejorar tanto la velocidad como la calidad de sus creaciones. La fusión del arte tradicional con la tecnología moderna abre caminos innovadores para crear diseños e ideas originales, posibilidades que de otro modo serían inalcanzables con los métodos convencionales.Cada pintura y diseño que creamos es el resultado de incontables horas de esfuerzo, ideación y la aplicación creativa de la IA.Con meticulosa atención y pasión artística, estas obras se elaboran para dar vida a los detalles y las emociones de la manera más cautivadora. Esta fusión de arte y tecnología cobra vida gracias a manos expertas y una mente creativa, que reflejan pericia, experiencia y un profundo amor por el arte.",
+      "price": "80000",
+      "image": "https://cdna.artstation.com/p/marketplace/presentation_assets/004/383/922/large/file.jpg?1742477576",
+      "user": "JORGE ANDRES PEREZ",
+      "nationality": "CHILE",
+      "user_img": "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+     },
+     {
+      "id": "9",
+      "name": "Referencias de terrenos",
+      "description": "Tanto si eres artista 2D como 3D, contar con la inspiración adecuada es fundamental. Este paquete de referencia definitivo te ofrece más de 650 imágenes PNG de alta calidad del paisaje nórdico de la Ciudad Vikinga: todo lo que necesitas para añadir autenticidad y gran detalle a tu trabajo.",
+      "price": "70000",
+      "image": "https://cdnb.artstation.com/p/marketplace/presentation_assets/004/384/119/large/file.jpg?1742486443",
+      "user": "JORGE ANDRES PEREZ",
+      "nationality": "CHILE",
+      "user_img": "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+     }
   ]
 
 

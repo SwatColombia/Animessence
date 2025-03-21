@@ -14,6 +14,7 @@ export class LoginService {
   public role?: string;
 
   private isLoggedIn = new BehaviorSubject<boolean>(false);
+  
   public isLoggedIn$ = this.isLoggedIn.asObservable();
 
   constructor(
@@ -55,6 +56,10 @@ export class LoginService {
       return true;
     }
     return this.isLoggedIn.value;
+  }
+
+  get loginText(): string {
+    return this.isLoggedIn.value ? 'Sesión Iniciada' : 'Iniciar Sesión';
   }
 
   logout() {
