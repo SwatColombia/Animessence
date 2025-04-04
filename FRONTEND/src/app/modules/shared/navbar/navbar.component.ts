@@ -14,6 +14,7 @@ export class NavbarComponent {
 
   carritoCounter: number = 0;
   menuAbierto= false;
+  navAbierto : boolean = false;
 
   constructor(
     private carritoService: CarritoService, 
@@ -26,6 +27,10 @@ export class NavbarComponent {
       this.carritoCounter = counter;
       console.log("Productos en carrito:", this.carritoCounter);
     });
+  }
+
+  toggleNaV(){
+    this.navAbierto = !this.navAbierto;
   }
   toggleMenu() {
     this.menuAbierto = !this.menuAbierto;

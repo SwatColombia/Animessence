@@ -1,61 +1,55 @@
 <!-- Main navigation container -->
 <nav
-  class="flex-no-wrap relative flex w-full items-center justify-between text-white font-semibold py-2   lg:flex-wrap lg:justify-start lg:py-8">
+  class="flex-no-wrap relative flex w-full items-center justify-between text-white font-semibold py-2 lg:flex-wrap lg:justify-start lg:py-8">
   <div class="flex w-full flex-wrap items-center justify-between px-3">
     <!-- Hamburger button for mobile view -->
-    <button
-      class="block border-0 bg-transparent px-2 text-black/50 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
-      type="button" data-twe-collapse-init
-      data-twe-target="#navbarSupportedContent12"
-      aria-controls="navbarSupportedContent12" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <!-- Hamburger icon -->
-      <span
-        class="[&>svg]:w-7 [&>svg]:stroke-white/100 dark:[&>svg]:stroke-neutral-200">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor">
-          <path
-            fill-rule="evenodd"
-            d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
-            clip-rule="evenodd" />
-        </svg>
-      </span>
-    </button>
+    <button (click)="toggleNaV()"
+  class="block border-0 bg-transparent px-2 text-black/50 dark:text-neutral-200 lg:hidden">
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+    <path fill-rule="evenodd"
+      d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+      clip-rule="evenodd" />
+  </svg>
+</button>
 
     <!-- Collapsible navigation container -->
     <div
-      class="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto"
-      id="navbarSupportedContent12" data-twe-collapse-item>
-      <!-- Logo -->
-      <a class="mb-4 me-5 ms-2 mt-3 flex items-center lg:mb-0 lg:mt-0" href="#">
-        <img src="../../../../assets/logo y texto.png" style="height:60px"
-          alt="TE Logo" loading="lazy" />
+  [ngClass]="{ 'hidden': !navAbierto, 'flex': navAbierto }"
+  class="!visible flex-grow basis-[100%] flex-col items-center lg:flex lg:basis-auto lg:flex-row">
+
+  <!-- Logo -->
+  <a class="mb-4 me-5 ms-2 mt-3 flex items-center lg:mb-0 lg:mt-0" href="#">
+    <img src="../../../../assets/logo y texto.png" style="height:60px" alt="TE Logo" loading="lazy" />
+  </a>
+
+  <!-- Links de navegación -->
+  <ul class="list-style-none me-auto flex flex-col ps-0 lg:flex-row">
+    <li class="mb-4 lg:mb-0 lg:pe-8">
+      <a
+        class="text-white/80 transition duration-200 hover:text-white/80 focus:text-stone-400 active:text-gray-500 dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
+        href="#"
+        (click)="navAbierto = false">
+        Inicio
       </a>
-      <!-- Left navigation links -->
-      <ul class="list-style-none me-auto flex flex-col ps-0 lg:flex-row"
-        data-twe-navbar-nav-ref>
-        <li class="mb-4 lg:mb-0 lg:pe-8" data-twe-nav-item-ref>
-          <!-- Dashboard link -->
-          <a
-            class="text-white/80 transition duration-200 hover:text-white/80 hover:ease-in-out focus:text-stone-400 active:text-gray-500 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
-            href data-twe-nav-link-ref>Inicio</a>
-        </li>
-        <!-- Team link -->
-        <li class="mb-4 lg:mb-0 lg:pe-8" data-twe-nav-item-ref>
-          <a
-            class="text-white/80 transition duration-200 hover:text-white/80 hover:ease-in-out focus:text-stone-400 active:text-gray-500 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
-            href="artistas" data-twe-nav-link-ref>Artistas</a>
-        </li>
-        <!-- Projects link -->
-        <li class="mb-4 lg:mb-0 lg:pe-8" data-twe-nav-item-ref>
-          <a
-            class="text-white/80 transition duration-200 hover:text-white/80 hover:ease-in-out focus:text-stone-400 active:text-gray-500 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
-            href="works" data-twe-nav-link-ref>Trabajos</a>
-        </li>
-      </ul>
-    </div>
+    </li>
+    <li class="mb-4 lg:mb-0 lg:pe-8">
+      <a
+        class="text-white/80 transition duration-200 hover:text-white/80 focus:text-stone-400 active:text-gray-500 dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
+        href="artistas"
+        (click)="navAbierto = false">
+        Artistas
+      </a>
+    </li>
+    <li class="mb-4 lg:mb-0 lg:pe-8">
+      <a
+        class="text-white/80 transition duration-200 hover:text-white/80 focus:text-stone-400 active:text-gray-500 dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
+        href="works"
+        (click)="navAbierto = false">
+        Trabajos
+      </a>
+    </li>
+  </ul>
+</div>
 
     <!-- Right elements -->
     <div class="relative flex items-center">
@@ -147,7 +141,7 @@
             Iniciar sesión
           </a>
 
-          <a *ngIf="loginService.checkIsLogged() "routerLink="/animadores3D/users" routerLinkActive="router-link-active"  (click)="verPerfil()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">
+          <a *ngIf="loginService.checkIsLogged()" routerLink="/animadores3D/usuariosRegistrados" routerLinkActive="router-link-active"  (click)="verPerfil()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">
             Usuarios registrados 
           </a>
           <a (click)="cerrarSesion()" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 cursor-pointer">

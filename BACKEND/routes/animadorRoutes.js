@@ -8,7 +8,7 @@ router.post('/registrar', registrar) ;
 
 router.post('/login', login )
 
-router.get('/usuariosRegistrados', obtenerAnimadores) ;
+router.get('animadores3D/usuariosRegistrados', obtenerAnimadores) ;
 
 
 router.delete('/animadores3D/usuariosRegistrados/:id', eliminarUsuario);

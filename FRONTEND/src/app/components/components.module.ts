@@ -11,6 +11,7 @@ import { UploadComponent } from './upload/upload.component';
 import { TruncateWordsPipe } from '../pipes/truncate-words.pipe';
 import { ProfileComponent } from './profile/profile.component';
 import { UsersComponent } from './users/users.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   exports: [
@@ -30,7 +31,7 @@ import { UsersComponent } from './users/users.component';
     ProfileComponent,
     UsersComponent,
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule,FormsModule],
   providers: [ArtistsService],
 })
 export class ComponentsModule {}
